@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Market</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="market" id="market">
+        <div class="panel items-panel">
+            <div class="header">
+                <h1>Black Market</h1>
+                <div class="search-bar">
+                    <input type="text" id="search" placeholder="Search items..." oninput="filterItems()">
+                </div>
+                <div class="filters" id="filters">
+                    <button class="filter active" data-filter="all">All</button>
+                    <button class="filter" data-filter="weapon">Weapons</button>
+                    <button class="filter" data-filter="item">Items</button>
+                </div>
+            </div>
+            <div class="grid" id="grid"></div>
+        </div>
+        <div class="panel cart-panel">
+            <div class="header">
+                <h2>Your Cart</h2>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="empty-cart">Your cart is empty.</div>
+            </div>
+            <div class="cart-footer">
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="totalPrice">$0</span>
+                </div>
+                <div class="payment-buttons">
+                    <button class="pay-btn cash" onclick="checkout('cash')">Pay Cash</button>
+                    <button class="pay-btn card" onclick="checkout('bank')">Pay Card</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: transparent;
+    overflow: hidden;
+    user-select: none;
+}
+
+.market {
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background: rgba(0,0,0,0.6);
+}
+
+.panel {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+}
+
+.items-panel {
+    width: 520px;
+}
+
+.cart-panel {
+    width: 320px;
+}
+
+.header {
+    padding: 16px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.header h1, .header h2 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 13px;
+    outline: none;
+}
+
+.search-bar input:focus {
+    border-color: #555;
+}
+
+.filters {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.filter {
+    padding: 4px 14px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background: transparent;
+    color: #888;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.15s;
+}
+
+.filter.active {
+    background: #c8a84e;
+    color: #111;
+    border-color: #c8a84e;
+}
+
+.filter:hover {
+    color: #fff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 12px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.item-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    transition: border-color 0.15s;
+}
+
+.item-card:hover {
+    border-color: #444;
+}
+
+.item-card img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.item-info {
+    text-align: center;
+}
+
+.item-label {
+    color: #ddd;
+    font-size: 12px;
+    display: block;
+}
+
+.item-price {
+    color: #c8a84e;
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+    margin-top: 2px;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    background: #c8a84e;
+    color: #111;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.add-btn:hover {
+    background: #dbb95e;
+}
+
+.cart-items {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    min-height: 120px;
+}
+
+.empty-cart {
+    color: #555;
+    text-align: center;
+    padding: 24px 0;
+    font-size: 13px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #222;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-label {
+    color: #ddd;
+    font-size: 13px;
+}
+
+.cart-item-price {
+    color: #c8a84e;
+    font-size: 12px;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.qty-btn {
+    width: 24px; height: 24px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    background: transparent;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.15s;
+}
+
+.qty-btn:hover {
+    background: #2a2a2a;
+    color: #fff;
+}
+
+.qty {
+    color: #ddd;
+    font-size: 13px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 4px;
+}
+
+.remove-btn:hover {
+    color: #e44;
+}
+
+.cart-footer {
+    padding: 12px 16px;
+    border-top: 1px solid #2a2a2a;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.payment-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.pay-btn {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.pay-btn.cash {
+    background: #2d7d46;
+    color: #fff;
+}
+
+.pay-btn.cash:hover {
+    background: #3a9e59;
+}
+
+.pay-btn.card {
+    background: #2a6b8a;
+    color: #fff;
+}
+
+.pay-btn.card:hover {
+    background: #3a8aaf;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 2px;
+}
